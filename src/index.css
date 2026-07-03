@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Force visible and beautiful high-contrast scrollbars for the preview area and sidebar */
+#canvas-container::-webkit-scrollbar,
+aside::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+#canvas-container::-webkit-scrollbar-track,
+aside::-webkit-scrollbar-track {
+  background: #EAE8E3 !important;
+  border-radius: 8px !important;
+}
+
+#canvas-container::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-thumb {
+  background-color: #1A1A1A !important;
+  border-radius: 8px !important;
+  border: 3px solid #EAE8E3 !important;
+  transition: background-color 0.2s ease;
+}
+
+#canvas-container::-webkit-scrollbar-thumb:hover,
+aside::-webkit-scrollbar-thumb:hover {
+  background-color: #333333 !important;
+}
+
+/* Standard scrollbar for Firefox */
+#canvas-container,
+aside {
+  scrollbar-width: auto !important;
+  scrollbar-color: #1A1A1A #EAE8E3 !important;
+}
+
+/* Additional styling to make the simulator container extremely clean and visually scrollable */
+#canvas-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Preview Mode override to hide edit boundaries and disable editing */
+.preview-mode [contenteditable] {
+  pointer-events: none !important;
+  user-select: none !important;
+  outline: none !important;
+  cursor: default !important;
+}
+
+
